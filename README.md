@@ -3,8 +3,8 @@
 
 ## Build and Run
 
-- erl -make
-- erl -pa ebin/
+- `erl -make`
+- `erl -pa ebin/`
 
 ```erlang
 Erlang/OTP 20 [erts-9.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:10] [hipe] [kernel-poll:false]
