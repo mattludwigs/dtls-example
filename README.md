@@ -1,30 +1,32 @@
 # DtlsProto
 
-```elixir
-Interactive Elixir (1.6.4) - press Ctrl+C to exit (type h() ENTER for help)
-iex(1)> DtlsProto.Server.start_link()
-{:ok, #PID<0.148.0>}
-iex(2)> client = DtlsProto.Client.connnect()
-{:sslsocket, {:gen_udp, #Port<0.4370>, :dtls_connection}, #PID<0.152.0>}
-iex(3)> :ssl.send(client, "hello")
-:ok
-"[SERVER RECV]: {:ssl, {:sslsocket, {:gen_udp, {#PID<0.151.0>, {{{127, 0, 0, 1}, 52289}, #Port<0.4369>}}, :dtls_connection}, #PID<0.153.0>}, 'hello'}"
+
+## Build and Run
+
+- erl -make
+- erl -pa ebin/
+
+```erlang
+Erlang/OTP 20 [erts-9.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:10] [hipe] [kernel-poll:false]
+
+Eshell V9.2  (abort with ^G)
+1> dtls_server:start_link().
+{ok,<0.81.0>}
+2> Client = dtls_client:connect().
+{sslsocket,{gen_udp,#Port<0.936>,dtls_connection},<0.85.0>}
+3> dtls_client:send(Client, "Hello").
+ok
+[Server Recv]: {ssl,
+                   {sslsocket,
+                       {gen_udp,
+                           {<0.84.0>,{{{127,0,0,1},64655},#Port<0.933>}},
+                           dtls_connection},
+                       <0.86.0>},
+                   "Hello"}
+4>
 ```
 
-## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `dtls_proto` to your list of dependencies in `mix.exs`:
+Example DTLS with PSK in Erlang. Just a proof of concept. Does not work with Erlang/OTP >= 20.3.
 
-```elixir
-def deps do
-  [
-    {:dtls_proto, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/dtls_proto](https://hexdocs.pm/dtls_proto).
 

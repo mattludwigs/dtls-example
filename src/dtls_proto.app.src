@@ -1,0 +1,6 @@
+{appliction, dtls_proto,
+  [{vsn, "1.0.0"},
+   {modules, [dtls_server, dtls_client]},
+   {registered, [dtls_proto]}
+  ]}.
+
