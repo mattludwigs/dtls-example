@@ -7,7 +7,7 @@
 - `erl -pa ebin/`
 
 
-Working like this on Erlang/OTP <= 20.2.4
+# Working like this on Erlang/OTP <= 20.2.4
 
 ```erlang
 Erlang/OTP 20 [erts-9.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:10] [hipe] [kernel-poll:false]
@@ -29,7 +29,7 @@ ok
 4>
 ```
 
-There seems to be a regression starting at Erlang/OTP 20.3
+# There seems to be a regression starting at Erlang/OTP 20.3
 
 ```
 Erlang/OTP 20 [erts-9.3] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:10] [hipe] [kernel-poll:false]
@@ -208,8 +208,7 @@ Eshell V9.3  (abort with ^G)
      {gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,686}]}]}
 3> 
 ```
-
-Here is the stack trace found in Erlang/OTP 21
+# Here is the stack trace found in Erlang/OTP 21
 
 ```
 Erlang/OTP 21 [erts-10.0] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe]
